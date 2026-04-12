@@ -1,0 +1,67 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isOpen = ref(false);
+
+const navLinks = [
+  { id: "00", name: "Home", href: "#" },
+  { id: "01", name: "Destination", href: "#" },
+  { id: "02", name: "Crew", href: "#" },
+  { id: "03", name: "Technology", href: "#" },
+];
+</script>
+
+<template>
+  <nav class="flex items-center justify-between p-6 bg-transparent">
+    <div class="text-white font-bold">
+      <img src="@/assets/shared/logo.svg" alt="Logo" />
+    </div>
+
+    <button
+      @click="isOpen = true"
+      class="md:hidden text-blue-cream focus:outline-none"
+    >
+      <img src="@/assets/shared/icon-hamburger.svg" alt="" />
+    </button>
+
+    <ul class="hidden md:flex gap-8 text-white uppercase tracking-widest">
+      <li v-for="link in navLinks" :key="link.id">
+        <a :href="link.href" class="hover:border-b-2 pb-2">
+          <span class="font-bold mr-2">{{ link.id }}</span> {{ link.name }}
+        </a>
+      </li>
+    </ul>
+
+    <div
+      :class="isOpen ? 'translate-x-0' : 'translate-x-full'"
+      class="fixed top-0 right-0 h-full w-64 bg-white/4 backdrop-blur-lg z-50 transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="flex justify-end px-6 py-8">
+        <button @click="isOpen = false" class="text-cyan-400">
+          <img src="@/assets/shared/icon-close.svg" alt="" />
+        </button>
+      </div>
+
+      <ul
+        class="flex flex-col gap-8 mt-8 pl-8 text-white uppercase tracking-widest"
+      >
+        <li v-for="link in navLinks" :key="link.id">
+          <a
+            class="font-barlow-condensed text-[16px]"
+            :href="link.href"
+            @click="isOpen = false"
+          >
+            <span class="font-bold mr-3 tracking-[2.7px]">{{ link.id }}</span>
+            <span class="font-normal tracking-[2.7px]">{{ link.name }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div
+      v-if="isOpen"
+      @click="isOpen = false"
+      class="fixed inset-0 bg-black/20 z-40 md:hidden"
+    ></div>
+  </nav>
+</template>
