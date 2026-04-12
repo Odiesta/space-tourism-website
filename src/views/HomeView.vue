@@ -34,7 +34,7 @@ import NavigationMenu from "@/components/NavigationMenu.vue";
         ></div>
 
         <span
-          class="font-bellefair text-[20px] uppercase tracking-[1.25px] text-[#0B0D17]"
+          class="font-bellefair text-[20px] uppercase tracking-[1.25px] text-casual-navy"
         >
           Explore
         </span>
