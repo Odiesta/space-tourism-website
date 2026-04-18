@@ -14,11 +14,11 @@ const navLinks = [
 
 <template>
   <nav
-    class="flex items-center justify-between p-6 md:p-0 md:pl-8 md:h-24 bg-transparent"
+    class="flex items-center justify-between p-6 md:p-0 lg:pt-4 lg:pr-0 md:pl-8 md:h-24 bg-transparent"
   >
     <div class="text-white font-bold">
       <RouterLink :to="`/`">
-        <img src="@/assets/shared/logo.svg" alt="Logo" />
+        <img src="@/assets/shared/logo.svg" alt="Logo" class="lg:h-12" />
       </RouterLink>
     </div>
 
@@ -29,8 +29,10 @@ const navLinks = [
       <img src="@/assets/shared/icon-hamburger.svg" alt="" />
     </button>
 
+    <hr class="hidden lg:block text-white/25 h-px flex-1 ml-8 -mr-4 z-50" />
+
     <ul
-      class="hidden md:flex items-center self-stretch px-10 gap-8 text-white uppercase tracking-widest md:bg-white/4 md:backdrop-blur-lg"
+      class="hidden md:flex items-center self-stretch px-10 gap-8 text-white uppercase tracking-widest md:bg-white/4 md:backdrop-blur-lg lg:w-2xl xl:w-3xl 2xl:w-4xl lg:justify-evenly"
     >
       <li
         v-for="link in navLinks"
@@ -42,7 +44,7 @@ const navLinks = [
           class="h-full flex items-center border-b-3 border-transparent hover:border-white/50 transition-colors"
           exact-active-class="!border-white"
         >
-          <span class="font-bold mr-2 md:hidden">{{ link.id }}</span>
+          <span class="font-bold mr-2 md:hidden lg:block">{{ link.id }}</span>
           {{ link.name }}
         </RouterLink>
       </li>
