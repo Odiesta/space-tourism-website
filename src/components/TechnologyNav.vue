@@ -5,7 +5,7 @@ const store = useTechnologyStore();
 </script>
 
 <template>
-  <ul class="flex justify-center lg:justify-start gap-4 md:gap-6">
+  <ul class="flex justify-center lg:justify-start gap-4 md:gap-6 md:mt-6">
     <li
       v-for="(technology, index) in store.technologies"
       :key="technology.name"
@@ -14,7 +14,7 @@ const store = useTechnologyStore();
     >
       <div
         :class="[
-          ' w-10 h-10 flex justify-center items-center text-[16px] rounded-full transition-all border border-white/25 ',
+          ' w-10 md:w-15 h-10 md:h-15 flex justify-center items-center text-[16px] md:text-2xl rounded-full transition-all border border-white/25 ',
           store.activeIndex === index
             ? 'bg-white text-black'
             : 'bg-transparent hover:bg-white/50 text-white',
