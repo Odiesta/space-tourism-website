@@ -5,7 +5,7 @@ const store = useCrewStore();
 </script>
 
 <template>
-  <ul class="flex justify-center lg:justify-start gap-4 md:gap-6">
+  <ul class="flex justify-center lg:justify-start gap-4 md:gap-6 md:mt-2">
     <li
       v-for="(crew, index) in store.crews"
       :key="crew.name"
