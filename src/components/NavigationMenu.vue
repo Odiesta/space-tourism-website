@@ -1,20 +1,23 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 
 const isOpen = ref(false);
 
 const navLinks = [
-  { id: "00", name: "Home", href: "#" },
-  { id: "01", name: "Destination", href: "#" },
-  { id: "02", name: "Crew", href: "#" },
-  { id: "03", name: "Technology", href: "#" },
+  { id: "00", name: "Home", href: "/" },
+  { id: "01", name: "Destination", href: "/destination" },
+  { id: "02", name: "Crew", href: "/crew" },
+  { id: "03", name: "Technology", href: "/technology" },
 ];
 </script>
 
 <template>
   <nav class="flex items-center justify-between p-6 bg-transparent">
     <div class="text-white font-bold">
-      <img src="@/assets/shared/logo.svg" alt="Logo" />
+      <RouterLink :to="`/`">
+        <img src="@/assets/shared/logo.svg" alt="Logo" />
+      </RouterLink>
     </div>
 
     <button
@@ -26,9 +29,9 @@ const navLinks = [
 
     <ul class="hidden md:flex gap-8 text-white uppercase tracking-widest">
       <li v-for="link in navLinks" :key="link.id">
-        <a :href="link.href" class="hover:border-b-2 pb-2">
+        <RouterLink :to="`${link.href}`" class="hover:border-b-2 pb-2">
           <span class="font-bold mr-2">{{ link.id }}</span> {{ link.name }}
-        </a>
+        </RouterLink>
       </li>
     </ul>
 
