@@ -13,7 +13,7 @@ const store = useDestinationStore();
   >
     <NavigationMenu />
     <h2
-      class="text-white font-barlow-condensed uppercase text-center tracking-[2.7px]"
+      class="text-white font-barlow-condensed uppercase text-center md:text-left md:ml-8 md:mt-8 md:text-xl tracking-[2.7px]"
     >
       <span class="opacity-25 mr-4 font-bold">01</span> Pick your destination
     </h2>
@@ -24,26 +24,30 @@ const store = useDestinationStore();
       <img
         :src="store.currentPlanet?.image"
         :alt="store.currentPlanet?.name"
-        class="w-44 h-44 lg:w-[445px] animate-spin-slow"
+        class="w-44 h-44 lg:w-[445px] md:w-80 md:h-80 animate-spin-slow"
       />
     </div>
 
-    <div class="max-w-md text-center lg:text-left px-8 py-6">
+    <div
+      class="max-w-md md:max-w-2xl md:mx-auto text-center lg:text-left px-8 py-6"
+    >
       <DestinationNav />
 
       <h1
-        class="text-white text-[56px] lg:text-[100px] font-bellefair uppercase mt-4"
+        class="text-white text-[56px] md:text-[80px] lg:text-[100px] font-bellefair uppercase mt-4"
       >
         {{ store.currentPlanet?.name }}
       </h1>
 
       <p
-        class="text-blue-cream font-barlow leading-relaxed border-b border-[#383B4B] pb-8"
+        class="text-blue-cream font-barlow leading-relaxed border-b border-[#383B4B] pb-8 md:px-4"
       >
         {{ store.currentPlanet?.description }}
       </p>
 
-      <div class="flex flex-col md:flex-row gap-8 py-8 uppercase">
+      <div
+        class="flex flex-col md:flex-row md:justify-evenly gap-8 py-8 uppercase"
+      >
         <div>
           <span
             class="text-blue-cream text-sm font-barlow-condensed tracking-[2.36px]"
