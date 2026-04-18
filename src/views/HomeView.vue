@@ -26,8 +26,9 @@ import NavigationMenu from "@/components/NavigationMenu.vue";
     </div>
 
     <div class="mt-20 pb-12 flex items-center justify-center">
-      <button
-        class="group relative z-10 flex h-[150px] w-[150px] items-center justify-center rounded-full bg-white transition-all duration-500"
+      <RouterLink
+        :to="`/destination`"
+        class="group relative z-10 flex h-[150px] w-[150px] items-center justify-center rounded-full bg-white transition-all duration-500 cursor-pointer"
       >
         <div
           class="absolute inset-0 -z-10 h-full w-full rounded-full bg-white/10 transition-all duration-500 ease-in-out group-hover:scale-[1.6]"
@@ -38,7 +39,7 @@ import NavigationMenu from "@/components/NavigationMenu.vue";
         >
           Explore
         </span>
-      </button>
+      </RouterLink>
     </div>
   </div>
 </template>
