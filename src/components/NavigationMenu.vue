@@ -13,7 +13,9 @@ const navLinks = [
 </script>
 
 <template>
-  <nav class="flex items-center justify-between pl-8 h-24 bg-transparent">
+  <nav
+    class="flex items-center justify-between p-6 md:p-0 md:pl-8 md:h-24 bg-transparent"
+  >
     <div class="text-white font-bold">
       <RouterLink :to="`/`">
         <img src="@/assets/shared/logo.svg" alt="Logo" />
