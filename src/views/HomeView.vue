@@ -14,11 +14,11 @@ import NavigationMenu from "@/components/NavigationMenu.vue";
       <div
         class="m-6 text-center lg:text-justify md:mt-30 md:max-w-md md:mx-auto lg:ml-32 flex-1"
       >
-        <h2
+        <p
           class="text-blue-cream text-[16px] font-barlow-condensed uppercase tracking-[2.7px] md:text-xl"
         >
           So, you want to travel to
-        </h2>
+        </p>
 
         <h1
           class="text-white text-[80px] font-bellefair uppercase md:text-[150px]"

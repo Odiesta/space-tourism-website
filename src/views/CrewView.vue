@@ -5,11 +5,15 @@ import { useCrewStore } from "@/store/crew";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import type { Swiper as SwiperType } from "swiper";
+import { Keyboard, A11y } from "swiper/modules";
+
 import "swiper/css";
 import { ref, watch } from "vue";
 import TextNavItem from "@/components/TextNavItem.vue";
 
 const store = useCrewStore();
+
+const modules = [Keyboard, A11y];
 
 // Hold the Swiper instance to control it programmatically
 const swiperInstance = ref<SwiperType | null>(null);
@@ -55,6 +59,14 @@ watch(
           class="w-full max-w-[300px] md:max-w-none lg:max-w-[445px] mt-auto"
         >
           <swiper
+            :modules="modules"
+            :keyboard="{ enabled: true, onlyInViewport: true }"
+            :a11y="{
+              enabled: true,
+              prevSlideMessage: 'Previous crew member',
+              nextSlideMessage: 'Next crew member',
+              slideLabelMessage: 'Crew member {{index}} of {{slidesLength}}',
+            }"
             @swiper="onSwiper"
             @slideChange="onSlideChange"
             :initialSlide="store.activeIndex"
@@ -78,16 +90,16 @@ watch(
         <CrewNav />
 
         <div class="md:mb-8">
-          <h3
+          <p
             class="font-bellefair text-white/50 mt-8 text-[16px] md:text-2xl lg:text-[32px] uppercase"
           >
             {{ store.currentCrew?.title }}
-          </h3>
-          <h2
+          </p>
+          <h1
             class="text-white text-[24px] md:text-[40px] lg:text-[56px] font-bellefair uppercase mt-2"
           >
             {{ store.currentCrew?.name }}
-          </h2>
+          </h1>
 
           <p
             class="text-blue-cream font-barlow leading-relaxed mt-4 md:text-base"

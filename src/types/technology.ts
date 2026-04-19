@@ -1,5 +1,6 @@
 export interface Technology {
   name: string;
   description: string;
-  image: string;
+  imageLandscape: string;
+  imagePortrait: string;
 }
