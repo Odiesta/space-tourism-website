@@ -10,7 +10,7 @@ const store = useDestinationStore();
 
 <template>
   <div
-    class="min-h-screen w-full bg-cover bg-center bg-no-repeat bg-[url('@/assets/destination/background-destination-mobile.jpg')] md:bg-[url('@/assets/destination/background-destination-tablet.jpg')] lg:bg-[url('@/assets/destination/background-destination-desktop.jpg')]"
+    class="min-h-screen w-full bg-cover bg-center bg-no-repeat bg-[url('/destination/background-destination-mobile.jpg')] md:bg-[url('/destination/background-destination-tablet.jpg')] lg:bg-[url('/destination/background-destination-desktop.jpg')]"
   >
     <NavigationMenu />
 

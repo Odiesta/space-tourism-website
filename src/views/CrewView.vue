@@ -43,7 +43,7 @@ watch(
 
 <template>
   <div
-    class="min-h-screen flex flex-col w-full bg-cover bg-center bg-no-repeat bg-[url('@/assets/crew/background-crew-mobile.jpg')] md:bg-[url('@/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('@/assets/crew/background-crew-desktop.jpg')]"
+    class="min-h-screen flex flex-col w-full bg-cover bg-center bg-no-repeat bg-[url('/crew/background-crew-mobile.jpg')] md:bg-[url('/crew/background-crew-tablet.jpg')] lg:bg-[url('/crew/background-crew-desktop.jpg')]"
   >
     <NavigationMenu />
 
