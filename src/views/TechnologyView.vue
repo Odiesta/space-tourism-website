@@ -30,7 +30,7 @@ const store = useTechnologyStore();
 
 <template>
   <div
-    class="flex flex-col min-h-screen w-full bg-cover bg-center bg-no-repeat bg-[url('@/assets/technology/background-technology-mobile.jpg')] md:bg-[url('@/assets/technology/background-technology-tablet.jpg')]"
+    class="flex flex-col min-h-screen w-full bg-cover bg-center bg-no-repeat bg-[url('/technology/background-technology-mobile.jpg')] md:bg-[url('/technology/background-technology-tablet.jpg')] lg:bg-[url('/technology/background-technology-desktop.jpg')]"
   >
     <NavigationMenu />
 

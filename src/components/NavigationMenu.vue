@@ -94,7 +94,7 @@ onBeforeUnmount(() => {
   >
     <div class="text-white font-bold">
       <RouterLink :to="`/`">
-        <img src="@/assets/shared/logo.svg" alt="Logo" class="lg:h-12" />
+        <img src="/shared/logo.svg" alt="Logo" class="lg:h-12" />
       </RouterLink>
     </div>
 
@@ -106,7 +106,7 @@ onBeforeUnmount(() => {
       aria-controls="mobile-menu"
       class="md:hidden text-blue-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#0B0D17] rounded-sm"
     >
-      <img src="@/assets/shared/icon-hamburger.svg" alt="" />
+      <img src="/shared/icon-hamburger.svg" alt="" />
     </button>
 
     <hr class="hidden lg:block text-white/25 h-px flex-1 ml-8 -mr-4 z-50" />
@@ -145,7 +145,7 @@ onBeforeUnmount(() => {
           @click="closeMenu"
           class="text-cyan-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
         >
-          <img src="@/assets/shared/icon-close.svg" alt="" />
+          <img src="/shared/icon-close.svg" alt="" />
         </button>
       </div>
 
