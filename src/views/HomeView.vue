@@ -4,7 +4,7 @@ import NavigationMenu from "@/components/NavigationMenu.vue";
 
 <template>
   <div
-    class="min-h-screen flex flex-col w-full bg-cover bg-center bg-no-repeat bg-[url('@/assets/home/background-home-mobile.jpg')] md:bg-[url('@/assets/home/background-home-tablet.jpg')] lg:bg-[url('@/assets/home/background-home-desktop.jpg')]"
+    class="min-h-screen flex flex-col w-full bg-cover bg-center bg-no-repeat bg-[url('/home/background-home-mobile.jpg')] md:bg-[url('/home/background-home-tablet.jpg')] lg:bg-[url('/home/background-home-desktop.jpg')]"
   >
     <NavigationMenu />
 
