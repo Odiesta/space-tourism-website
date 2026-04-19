@@ -7,7 +7,8 @@ export const useTechnologyStore = defineStore("technology", {
   state: () => ({
     technologies: data.map((d) => ({
       ...d,
-      image: getImageUrl(d.image),
+      imageLandscape: getImageUrl(d.imageLandscape),
+      imagePortrait: getImageUrl(d.imagePortrait),
     })),
     activeIndex: 0,
   }),
