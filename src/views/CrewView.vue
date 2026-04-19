@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import { ref, watch } from "vue";
+import TextNavItem from "@/components/TextNavItem.vue";
 
 const store = useCrewStore();
 
@@ -38,31 +39,32 @@ watch(
 
 <template>
   <div
-    class="h-screen overflow-hidden flex flex-col w-full bg-cover bg-center bg-no-repeat bg-[url('@/assets/crew/background-crew-mobile.jpg')] md:bg-[url('@/assets/crew/background-crew-tablet.jpg')] backdrop-blur-2xl"
+    class="min-h-screen flex flex-col w-full bg-cover bg-center bg-no-repeat bg-[url('@/assets/crew/background-crew-mobile.jpg')] md:bg-[url('@/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('@/assets/crew/background-crew-desktop.jpg')]"
   >
     <NavigationMenu />
-    <h2
-      class="text-white font-barlow-condensed uppercase text-center md:text-left md:ml-8 md:mt-8 md:text-xl tracking-[2.7px]"
-    >
-      <span class="opacity-25 mr-4 font-bold">02</span> Meet Your Crew
-    </h2>
 
-    <div class="md:flex md:flex-col-reverse flex-1 justify-between">
+    <TextNavItem number="02" text="Meet Your Crew" />
+
+    <div
+      class="md:flex md:flex-col-reverse lg:flex-row-reverse lg:px-4 flex-1 justify-between"
+    >
       <div
-        class="flex flex-col lg:flex-row items-center justify-center lg:gap-32 mt-8 md:mt-0"
+        class="flex flex-col lg:flex-row items-center justify-center lg:gap-32 mt-8 md:mt-0 xl:mx-auto"
       >
-        <div class="w-full max-w-[300px] md:max-w-none lg:max-w-[445px]">
+        <div
+          class="w-full max-w-[300px] md:max-w-none lg:max-w-[445px] mt-auto"
+        >
           <swiper
             @swiper="onSwiper"
             @slideChange="onSlideChange"
             :initialSlide="store.activeIndex"
-            class="h-64 md:h-[500px] lg:h-auto w-full"
+            class="h-64 md:h-125 lg:h-[600px] w-full"
           >
             <swiper-slide v-for="crew in store.crews" :key="crew.name">
               <img
                 :src="crew.image"
                 :alt="crew.name"
-                class="h-64 md:h-[500px] lg:w-[445px] mx-auto object-contain object-bottom"
+                class="h-64 md:h-125 lg:h-[600px] mx-auto object-contain object-bottom mt-auto"
               />
             </swiper-slide>
           </swiper>
@@ -71,16 +73,18 @@ watch(
       </div>
 
       <div
-        class="max-w-md md:max-w-xl mx-auto text-center md:flex md:flex-col-reverse lg:text-left px-8 py-6"
+        class="max-w-md md:max-w-xl lg:max-w-2xl mx-auto text-center md:flex md:flex-col-reverse lg:justify-center lg:text-left px-8 lg:px-2 py-6 flex-1"
       >
         <CrewNav />
 
         <div class="md:mb-8">
-          <h3 class="text-white/50 mt-8 text-[16px] md:text-2xl uppercase">
+          <h3
+            class="font-bellefair text-white/50 mt-8 text-[16px] md:text-2xl lg:text-[32px] uppercase"
+          >
             {{ store.currentCrew?.title }}
           </h3>
           <h2
-            class="text-white text-[24px] md:text-[40px] lg:text-[100px] font-bellefair uppercase mt-2"
+            class="text-white text-[24px] md:text-[40px] lg:text-[56px] font-bellefair uppercase mt-2"
           >
             {{ store.currentCrew?.name }}
           </h2>
